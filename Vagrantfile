@@ -5,7 +5,11 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 3072
+  end
+
+  config.vm.box = "ubuntu/cosmic64"
 
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 

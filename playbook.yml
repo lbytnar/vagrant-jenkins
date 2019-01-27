@@ -4,6 +4,7 @@
   gather_facts: false
   vars:
     jenkins_hostname: 127.0.0.1
+    jenkins_plugin_timeout: 300
     jenkins_plugins:
       - pipeline
       - pipeline-basic-steps
@@ -11,6 +12,10 @@
       - pipeline-stage-view
       - blueocean
       - blueocean-pipeline-editor
+      - ansicolor
+      - greenballs
+    java_packages:
+      - openjdk-8-jdk
   pre_tasks:
     - name: python bootstrap
       raw: "test -e /usr/bin/python || ( apt -y update && apt install -y python-minimal )"
