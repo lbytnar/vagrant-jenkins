@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.memory = 3072
   end
 
-  config.vm.box = "ubuntu/cosmic64"
+  config.vm.box = "ubuntu/bionic64"
 
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
